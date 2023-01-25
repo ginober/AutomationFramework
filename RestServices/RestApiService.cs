@@ -23,8 +23,13 @@ namespace AutomationFramework.RestServices
         public new RestClient InitializeClient(string baseUrl = "")
         {
             var client = string.IsNullOrEmpty(baseUrl) ? InitializeClient() : new RestClient(baseUrl);
-            client.AddHandler("applicatino/json", () => { return NewtonsoftJsonSerializer.Default};);
+            client.AddHandler("applicatino/json", () => { return NewtonsoftJsonSerializer.Default; });
+            client.AddHandler("text/json", () => { return NewtonsoftJsonSerializer.Default; });
+            client.AddHandler("text/x-json", () => { return NewtonsoftJsonSerializer.Default; });
+            client.AddHandler("text/javascript", () => { return NewtonsoftJsonSerializer.Default; });
+            client.AddHandler("*+json", () => { return NewtonsoftJsonSerializer.Default; });
 
+           
             return client;
         }
     }
