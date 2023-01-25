@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutomationFramework.RestServices
+namespace AutomationFramework
 {
-    public class ReqResServices : RestApiService
+    public  class NewtonsoftJsonSerializer
     {
-        public ReqResServices()
+        public NewtonsoftJsonSerializer()
         {
 
         }
